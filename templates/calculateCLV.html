@@ -1,0 +1,36 @@
+<ion-view title="Calculate CLV" id="page2">
+  <ion-content padding="true" class="has-header">
+    <div class="spacer" style="width: 300px; height: 14px;"></div>
+    <form id="calculateCLV-form1" class="list">
+      <ion-toggle toggle-class="toggle-positive" id="calculateCLV-toggle1" ng-model="advanced" ng-click="toggleCheck()">Advanced calculation</ion-toggle>
+      <div class="spacer" style="width: 300px; height: 17px;"></div>
+      <label class="item item-input" id="calculateCLV-input1" name="turnover">
+        <span class="input-label">Turnover</span>
+        <input type="number" placeholder="eg 25000" ng-model="data.turnover">
+      </label>
+      <label class="item item-input" id="calculateCLV-input2" name="customers">
+        <span class="input-label">Number of customers</span>
+        <input type="number" placeholder="eg 1000" ng-model="data.customers">
+      </label>
+      <label class="item item-input" id="calculateCLV-input3" name="churn">
+        <span class="input-label">Churn rate (%)</span>
+        <input type="number" placeholder="eg. 25" ng-model="data.churn">
+      </label>
+      <div id="calculateCLV-container1" ng-show="advanced">
+        <form id="calculateCLV-form2" class="list">
+          <label class="item item-input" id="calculateCLV-input4" name="gross">
+            <span class="input-label">Gross margin (%)</span>
+            <input type="number" placeholder="eg. 15" ng-model="data.gross">
+          </label>
+          <label class="item item-input" id="calculateCLV-input5" name="interest">
+            <span class="input-label">Interest rate (%)</span>
+            <input type="number" placeholder="eg. 4" ng-model="data.interest">
+          </label>
+        </form>
+      </div>
+    </form>
+    <h2 id="calculateCLV-heading2" ng-model="clv" style="color:#000000;text-align:center;">{{clv}}</h2>
+    <div class="spacer" style="width: 300px; height: 11px;"></div>
+    <button id="calculateCLV-button1" ng-click="calculate()" class="button button-positive button-block icon ion-calculator"> </button>
+  </ion-content>
+</ion-view>
